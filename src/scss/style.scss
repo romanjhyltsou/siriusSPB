@@ -1,0 +1,119 @@
+@import "fonts";
+@import "normalize";
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Raleway-Medium", "sans-serif";
+    font-family: 500;
+    font-size: 16px;
+    overflow-x: hidden; 
+    min-height: 320px; 
+    color: #000000;
+    max-width: 1920px;
+    margin: 0 auto; 
+  }
+  
+  *,*::before, *::after{
+    box-sizing: inherit;
+  }
+  
+  a{
+    text-decoration: none;
+    color: inherit;  
+    display: inline-block;
+  }
+  
+  ul,
+  li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6{
+    margin: 0; 
+  }
+  p{
+    margin: 0;
+  }
+  .container{
+    max-width: 1280px;   
+    margin: 0 auto;
+    padding: 0px 10px; 
+  }
+$greyL: #A0A4A8;
+$grey: #828282;
+$greyB: #52575C;
+$white: #FFFFFF;
+$red: #E93C3C;
+$black: #25282B;
+$blue: #1A8BFF;
+
+
+@mixin flexBox ($d , $j) {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin fontMEBold ($c,$lineH, $letterS) {
+  font-family: "Montserrat-ExtraBold", "sans-serif";
+  font-weight: 800;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+@mixin fontMSBold ($c,$lineH, $letterS) {
+  font-family: "Montserrat-SemiBold", "sans-serif";
+  font-weight: 600;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+@mixin fontMMedium ($c,$lineH, $letterS) {
+  font-family: "Montserrat-Medium", "sans-serif";
+  font-weight: 500;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+@mixin fontREBold ($c,$lineH, $letterS) {
+  font-family: "Raleway-ExtraBold", "sans-serif";
+  font-weight: 800;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+@mixin fontRSBold ($c,$lineH, $letterS) {
+  font-family: "Raleway-SemiBold", "sans-serif";
+  font-weight: 600;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+@mixin fontRMedium ($c,$lineH, $letterS) {
+  font-family: "Raleway-Medium", "sans-serif";
+  font-weight: 500;
+  color: $c;
+  line-height: $lineH;
+  letter-spacing: $letterS;
+}
+
+.header{
+  &__container{
+    max-width: 1150px;
+    width: 100%;
+    padding: 0;
+  }
+  &__container nav{
+    padding: 0 20px;
+  }
+  min-height: 166px;
+  &__top{
+    background: rgba(245, 245, 245, 0.5);
+    height: 38px;
+  }
+  &__inner{
+    @include flexBox (flex, space-between);
+    padding-top: 12px
+  }
+}

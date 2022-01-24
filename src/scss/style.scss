@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
   body {
-    font-family: "Raleway-Medium", "sans-serif";
+    font-family: "Roboto-Regular", "sans-serif";
     font-family: 500;
     font-size: 16px;
     overflow-x: hidden; 
@@ -52,68 +52,215 @@ $blue: #1A8BFF;
 
 
 @mixin flexBox ($d , $j) {
-  display: flex;
-  justify-content: space-between;
+  display: $d;
+  justify-content: $j;
 }
-@mixin fontMEBold ($c,$lineH, $letterS) {
-  font-family: "Montserrat-ExtraBold", "sans-serif";
-  font-weight: 800;
+@mixin fontRobReg ($c,$lineH,$fs) {
+  font-family: "Roboto-Regular", "sans-serif";
+  font-weight: 400;
   color: $c;
   line-height: $lineH;
-  letter-spacing: $letterS;
+  font-size: $fs;
 }
-@mixin fontMSBold ($c,$lineH, $letterS) {
-  font-family: "Montserrat-SemiBold", "sans-serif";
-  font-weight: 600;
-  color: $c;
-  line-height: $lineH;
-  letter-spacing: $letterS;
-}
-@mixin fontMMedium ($c,$lineH, $letterS) {
-  font-family: "Montserrat-Medium", "sans-serif";
+@mixin fontRobMed ($c,$lineH,$fs) {
+  font-family: "Roboto-Medium", "sans-serif";
   font-weight: 500;
   color: $c;
   line-height: $lineH;
-  letter-spacing: $letterS;
+  font-size: $fs;
 }
-@mixin fontREBold ($c,$lineH, $letterS) {
-  font-family: "Raleway-ExtraBold", "sans-serif";
-  font-weight: 800;
+@mixin fontRobBol ($c,$lineH,$fs) {
+  font-family: "Roboto-Bold", "sans-serif";
+  font-weight: 700;
   color: $c;
   line-height: $lineH;
-  letter-spacing: $letterS;
+  font-size: $fs;
 }
-@mixin fontRSBold ($c,$lineH, $letterS) {
-  font-family: "Raleway-SemiBold", "sans-serif";
-  font-weight: 600;
-  color: $c;
-  line-height: $lineH;
-  letter-spacing: $letterS;
-}
-@mixin fontRMedium ($c,$lineH, $letterS) {
-  font-family: "Raleway-Medium", "sans-serif";
-  font-weight: 500;
-  color: $c;
-  line-height: $lineH;
-  letter-spacing: $letterS;
+.header{
+  &__wrapper{
+    margin: 5px 0 5px 0;
+  }
+  &-top{
+    @include flexBox (flex, space-between);
+    align-items: center;
+  }
+  &-buttom{
+    background-color: #F2F2F2;
+    height: 48px;
+  }
+  &-buttom__catalog{
+    @include fontRobMed($white,16px,14px);
+    width: 128px;
+    height: 48px;
+    @include flexBox (flex, space-around);
+    align-items: center;
+    background-color:rgba(235, 71, 71, 1);
+  }
+  &-buttom__wrapper{
+    display: flex;
+    max-width: 988px;
+    width: 100%;
+  }
+  &-buttom__container{
+    @include flexBox (flex, space-between);
+  }
 }
 
-.header{
-  &__container{
-    max-width: 1150px;
+.location{
+  &__wrapper{
+    max-width: 132px;
     width: 100%;
+  }
+  &__your-city{
+   @include fontRobReg ($grey,16px,12px);
+  }
+  &__city{
+    position: relative;
+    @include fontRobMed($red,16px,14px);
+    margin-left: 20px;
+    border-bottom: 1px dashed;
+  }
+  &__city::before{
+    position:absolute;
+    content: " ";
+    background-image: url(../img/icon/location-icon.svg);
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: -21px;
+  }
+}
+
+.search {
+  position: relative;
+  max-width: 307px;
+  width: 100%;
+  &__input {
+    position: relative;
+    box-sizing:border-box;
+    @include fontRobReg ($grey,16px,16px);
+    height: 30px;
+    width: 100%;
+    padding: 0 50px 0 15px;
+    border-radius: 2px;
+    border: 1px solid #CACCCF;
+    background: rgba(249, 249, 250, 1);
+  }
+  &__submit{
+    position:absolute;
+    top: 5px;
+    right: 12px;
     padding: 0;
+    border: none;
+    background: inherit;
+    cursor: pointer;
   }
-  &__container nav{
-    padding: 0 20px;
+
+}
+
+.mode {
+
+  &__wrapper {
+    @include fontRobReg ($grey,130%,12px);
+    max-width: 114px;
+    width: 100%;
   }
-  min-height: 166px;
-  &__top{
-    background: rgba(245, 245, 245, 0.5);
-    height: 38px;
+}
+
+.address {
+  &__wrapper {
+    max-width: 120px;
+    width: 100%;
   }
-  &__inner{
+
+  &__city {
+    @include fontRobReg ($grey,16px,12px);
+  }
+
+  &__phone {
+    @include fontRobBol ($black,16px,14px);
+  }
+  &__call{
+    @include fontRobReg ($red,16px,12px);
+  }
+}
+
+.burger{
+  cursor: pointer;
+  &__btn-line{
+    box-sizing: inherit;
+    background: $white;
+    height: 3px;
+    width: 20px;
+    margin-bottom: 3px;
+    display: block;
+  }
+}
+
+.nav {
+  width: 880px;
+  &__menu {
+
+    width: 100%;
+    height: 48px;
+    @include flexBox (flex, space-around);
+    align-items: center;
+  }
+
+  &__menu-item {
+    @include fontRobReg ($grey,16px,14px);
+    height: 48px;
+  }
+
+  &__menu-item-sing{
+    @include fontRobMed ($red,130%,14px)
+  }
+  &__menu-link {
+    height: 31px;
+    padding-top: 15px;
+  }
+  &__menu-link:hover{
+    border-bottom: 2px solid $red;
+  }
+}
+
+.basket {
+  width: 162px;
+  &__wrapper {
     @include flexBox (flex, space-between);
-    padding-top: 12px
+    align-items: center;
+    height: 48px;
+    width: 100%;
   }
+  &__heart,&__goods {
+    position: relative;
+  }
+  &__num-heart{
+    position: absolute;
+    @include fontRobReg ($white,10px,8px);
+    width: 14px;
+    height: 14px;
+    background-color: $red;
+    border-radius: 50%;
+    text-align: center;
+    bottom: 12px;
+    right: -6px;
+  }
+  &__num-goods{
+    position: absolute;
+    @include fontRobReg ($white,10px,8px);
+    width: 14px;
+    height: 14px;
+    background-color: $red;
+    border-radius: 50%;
+    text-align: center;
+    bottom: 13px;
+    right: 2px;
+  }
+  &__num-heart span,
+  &__num-goods span{
+    display: block;
+    margin-top: 2px;
+  }
+
 }

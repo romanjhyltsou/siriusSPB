@@ -846,4 +846,25 @@ input[type=number] {
   z-index: 2;
 }
 }
+
+.footer {
+
+  &__bottom {
+    height: 70px;
+    background-color:rgba(249, 249, 250, 1);
+    padding-bottom: 38px;
+  }
+
+  &__bottom-title {
+    @include fontRobReg($black,130%,14px);
+    padding-top: 30px;
+    margin-bottom: 8px;
+  }
+
+  &__bottom-text {
+    @include fontRobReg($black,130%,10px);
+  }
+}
+
+
 /* footer end*/

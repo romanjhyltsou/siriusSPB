@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     @@include('_header.html')
     <section class="breadcrumbs">
         <div class="container">
@@ -27,6 +28,16 @@
             </li>
     
           </ul>
+
+          <div class="breadcrumbs-mob">
+            <a href="">
+            <img src="img/icon/arrow__left.svg" alt="">
+            <div class="breadcrumbs-mob__text">
+              Назад  
+            </div>
+            </a>
+          </div>
+
         </div>
     </section>
     <!-- /.breadcrumbs -->
@@ -82,7 +93,7 @@
                     <a class="filter-by__price-link" href="#">По возрастанию цены
                       <img class="filter-by__price-icon" src="img/icon/arrow__down-icon.svg" alt="">
                     </a>
-                    <ul>
+                    <ul class="filter-by__price-inner">
                       <li><a href="#">По умолчанию</a></li>
                       <li><a href="#">По популярности</a></li>
                       <li><a href="#">По возрастанию цены</a></li>
@@ -91,6 +102,13 @@
                       <li><a href="#">По алфавиту</a></li>
                     </ul>
                   </li>
+                  <div class="filter-by__price-filter">
+                    <img src="img/icon/filter-icon.svg" alt="">
+                    <div class="filter-by__price-filter-text">
+                      Фильтр
+                    </div>
+                  </div>
+                  
                 </ul>
 
               
@@ -102,7 +120,11 @@
       <div class="container">
         <div class="catalog__wrapper">
 
-          <aside class="catalog-aside__price">
+          <aside class="catalog-aside__price"> <!-- catalog-aside__price--active -->
+
+            <div class="catalog-aside__close-filter">
+              <img src="img/close-filter.svg" alt="" class="catalog-aside__close-filter">
+            </div>
 
             <form class="catalog-aside__form">
               
@@ -110,12 +132,12 @@
 
                 <li class="catalog-aside__item-drop">
 
-                  <p class="catalog-aside__item-title catalog-aside__item--active">
+                  <p class="catalog-aside__item-title">
                     Цена, руб
                     <img src="img/icon/arrow__top-icon.svg" alt="">
                   </p>
 
-                  <div class="catalog-aside__content">
+                  <div class="catalog-aside__content"><!-- hide -->
                     <div class="catalog-aside__content-box filters-price__inputs">
                       <label class="filters-price__label">
                         <span class="filters-price__text">от</span>
@@ -133,12 +155,12 @@
                 </li>
                 <li class="catalog-aside__item-drop">
 
-                  <p class="catalog-aside__item-title catalog-aside__item--active">
+                  <p class="catalog-aside__item-title  catalog-aside__item-title--active">
                     Вид изделия
                     <img src="img/icon/arrow__top-icon.svg" alt="">
                   </p>
 
-                  <div class="catalog-aside__content">
+                  <div class="catalog-aside__content hide">
                     <div class="catalog-aside__content-box">
 
                       <div class="catalog-aside__checkbox">
@@ -434,7 +456,111 @@
 
           </aside>
           <!-- /.aside -->
-          <div class="catalog__card-list">
+          <div class="catalog__card-list">  
+
+            <!-- modal-choice start-->
+            <form class="modal-choice"> <!-- modal-choice--active -->
+
+              <div class="modal-choice__wrapper">
+
+                <div class="modal-choice__window">
+                  
+                  <div class="modal-choice__item">
+                    <h3 class="modal-choice__title">Выбор опций</h3>
+                    <img class="modal-choice__close" src="img/icon/close-icon.svg" alt="" >
+                  </div>
+
+                  <div class="modal-choice__item">
+                    <h6 class="modal-choice__row-text">Размерный ряд</h6>
+                    <div class="modal-choice__number-text">Количество</div>
+                  </div>
+
+                  <div class="modal-choice__item-content">
+
+                    <div class="modal-choice__art">
+
+                        <div class="modal-choice__art-text">
+                          Размер 104-108, 
+                          Рост 170-176 
+                          (Арт. 43585)
+                        </div>
+
+                        <div class="modal-choice__counter">
+                          <div class="modal-choice__counter-numer">
+                            0
+                          </div>
+                          <img src="img/icon/plus-icon.svg" alt="">
+                          <img src="img/icon/minus-icon.svg" alt="">
+                        </div>
+
+                    </div>
+                    <div class="modal-choice__art modal-choice__art-color">
+
+                      <div class="modal-choice__art-text">
+                        Размер 104-108, 
+                        Рост 170-176 
+                        (Арт. 43585)
+                      </div>
+
+                      <div class="modal-choice__counter">
+                        <div class="modal-choice__counter-numer">
+                          0
+                        </div>
+                        <img src="img/icon/plus-icon.svg" alt="">
+                        <img src="img/icon/minus-icon.svg" alt="">
+                      </div>
+                    </div>
+                    <div class="modal-choice__art">
+
+                      <div class="modal-choice__art-text">
+                        Размер 104-108, 
+                        Рост 170-176 
+                        (Арт. 43585)
+                      </div>
+
+                      <div class="modal-choice__counter">
+                        <div class="modal-choice__counter-numer">
+                          0
+                        </div>
+                        <img src="img/icon/plus-icon.svg" alt="">
+                        <img src="img/icon/minus-icon.svg" alt="">
+                      </div>
+
+                  </div>
+                  <div class="modal-choice__art modal-choice__art-color">
+
+                    <div class="modal-choice__art-text">
+                      Размер 104-108, 
+                      Рост 170-176 
+                      (Арт. 43585)
+                    </div>
+
+                    <div class="modal-choice__counter">
+                      <div class="modal-choice__counter-numer">
+                        0
+                      </div>
+                      <img src="img/icon/plus-icon.svg" alt="">
+                      <img src="img/icon/minus-icon.svg" alt="">
+                    </div>
+
+                    </div>
+                
+                  
+
+                  </div>
+
+                </div>
+                <button class="modal-choice__btn">
+                  <span>Добавить в корзину</span>
+                </button>
+
+              </div>
+        
+            <div class="modal-choice__overlay"></div>
+
+          </form>
+          <!-- modal-choice end-->
+
             <div class="catalog__card-wrapper">
               <a href="#" class="catalog__card">
                   <div class="catalog__img-box">

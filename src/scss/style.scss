@@ -352,35 +352,50 @@ $blue: #1A8BFF;
 
 .filter-by {
   &__price {
-/*     position: absolute;
-    right: 35%; */
-    margin: 0 0 0 auto;
+    position:relative;
+    margin: 0 12px 0 auto;
     width: 186px;
-    background-color:$white;
     z-index: 2;
-  }
-  &__price:hover{
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   }
   &__price-item{
     @include fontRobReg($greyB, 130%, 14px);
+    width: 196px;
+    
+  }
+  &__price-item:hover{
+    background-color:$white;
+    box-shadow: 0 23px 20px rgb(37 40 43 / 5%);
   }
   &__price-item ul{
+    position: absolute;
+    background-color:$white;
+    box-shadow: 0 23px 20px rgb(37 40 43 / 3%);
     display: none;
   }
   &__price-icon{
     margin-left: 13px;
   }
+
+  &__price-item ul li a{
+    width: 186px;
+  }
   &__price-item ul li a:hover {
     background-color:#007EFF;
     color:$white;
-    width: 186px;
   }
   &__price-item:hover &__price-icon{
     transform: rotate(-180deg);
   }
   &__price-item:hover ul{
+    position: absolute;
     display: block;
+  }
+  &__price-link,
+  &__price-inner a{
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
   }
 }
 /* filter end */
@@ -477,7 +492,7 @@ input[type=number] {
   .catalog {
 
 	&__wrapper {
-    margin-top: 58px;
+    margin-top: 20px;
 	}
 }
 .catalog-aside {
@@ -492,6 +507,7 @@ input[type=number] {
 		&__item-drop {
       margin-top: 33px;
       border-bottom: 1px solid rgba(232, 232, 232, 1);
+      width: 228px;
 		}
 
 		&__item-title {
@@ -503,7 +519,13 @@ input[type=number] {
 		}
     &__item-title img{
       margin-right: 2px;
+      transform: rotate(0deg);
+      transition: 0.3s;
 		}
+    &__item-title.catalog-aside__item-title--active img{
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
 		&__content-box {
       margin-bottom: 20px;
 		}
@@ -675,6 +697,7 @@ input[type=number] {
     background: #F9F9FA;
   }
 }
+
 /* .catalog end*/
 
 /* pagination */
@@ -732,7 +755,7 @@ input[type=number] {
 .footer {
 
   &__top {
-    height: 348px;
+    min-height: 348px;
     background-color:rgba(249, 249, 250, 1);
     border-top: 1px solid #E8E8E8;
     border-bottom: 1px solid #E8E8E8;
@@ -789,6 +812,9 @@ input[type=number] {
   }
   &__list-item-liq{
     color:$red;
+  }
+  &__social a{
+    margin-right: 6px;
   }
 }
 
@@ -865,6 +891,109 @@ input[type=number] {
     @include fontRobReg($black,130%,10px);
   }
 }
-
-
 /* footer end*/
+
+/* .modal  start*/
+.modal-choice {
+  display: none;
+  align-items:center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  &__wrapper {
+    position:relative;
+    z-index: 4;
+    color: black;
+    width: 321px;
+    height: 600px;
+    background-color:$white;
+    margin: 0 auto;
+  }
+  &__window{
+    padding: 36px 10px 20px 10px;
+
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items:center;
+  }
+  &__item img{
+    cursor: pointer;
+  }
+  &__item:nth-child(2){
+    margin-bottom: 49px;
+  }
+  &__art{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 8px 10px;
+  }
+  &__art:first-child{
+    border-top: 1px solid #E8E8E8;
+  }
+  &__art-color{
+    background-color:rgba(249, 249, 250, 1);
+  }
+  &__art-text{
+    @include fontRobReg($grey, 130%, 14px);
+    width: 130px;
+  }
+  &__counter{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    width: 128px;
+    height: 35px;
+    margin-top: 8px;
+  }
+  &__counter img{
+    cursor: pointer;
+  }
+  &__counter-numer{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 32px;
+    width: 50px;
+    border-radius: 4px;
+    border: 1px solid rgba(232, 232, 232, 1);
+  }
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:$black;
+    opacity: 0.5;
+  }
+  &__btn{
+    display: block;
+    width: 300px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid rgba(233, 60, 60, 1);
+    margin: 0 auto;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  &__btn span{
+    @include fontRobMed ($red, 16px, 16px);
+  }
+  &--active{
+    display: flex;
+  }
+}
+/* .modal  end*/
+.hide{
+  display: none;
+}

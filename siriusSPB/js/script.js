@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    const catalogBasketHearts = document.querySelectorAll('.catalog__basket-heart'),
+	  basketNumHeart = document.querySelectorAll('.basket__num-heart span'),
+	  basketNumGoods = document.querySelectorAll('.basket__num-goods span'),
+	  modalChoiceBtn = document.querySelector('.modal-choice__btn');
+	  
+	let counterHeart = 0;
+	let counterGoods = 0;
+
+
+	catalogBasketHearts.forEach( item => {
+		item.addEventListener('click', (e)=>{
+			let plusHeart = ++counterHeart;
+			basketNumHeart.forEach( item =>{
+				item.textContent = plusHeart;
+			});
+		});
+	});
+
+	modalChoiceBtn.addEventListener('click', (e)=>{
+		let plusgoods = ++counterGoods;
+		basketNumGoods.forEach( item =>{
+			item.textContent = plusgoods;
+		});
+	});;
     const burgerMob = document.querySelector('.burger__mob'),
       navMobMenu = document.querySelector('.nav-mob__menu'),
       closeWrapper = document.querySelector('.close__wrapper'),
@@ -2419,26 +2443,6 @@ if (rangeSlider) {
 		});
 	});
 };
-    const catalogBasketHearts = document.querySelectorAll('.catalog__basket-heart'),
-	  basketNumHeart = document.querySelector('.basket__num-heart span'),
-	  modalChoiceBtn = document.querySelector('.modal-choice__btn'),
-	  basketNumGoods = document.querySelector('.basket__num-goods span');
-	  
-	  console.log(modalChoiceBtn);
-	let counterHeart = 0;
-	let counterGoods = 0;
-
-	catalogBasketHearts.forEach( item => {
-		item.addEventListener('click', ()=>{
-			let plusHeart = ++counterHeart;
-			basketNumHeart.textContent = plusHeart;
-		});
-	});
-
-	modalChoiceBtn.addEventListener('click', ()=>{
-		let plusgoods = ++counterGoods;
-		basketNumGoods.textContent = plusgoods;
-	});;
 });
 
 

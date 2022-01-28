@@ -1,20 +1,24 @@
 const catalogBasketHearts = document.querySelectorAll('.catalog__basket-heart'),
-	  basketNumHeart = document.querySelector('.basket__num-heart span'),
-	  modalChoiceBtn = document.querySelector('.modal-choice__btn'),
-	  basketNumGoods = document.querySelector('.basket__num-goods span');
+	  basketNumHeart = document.querySelectorAll('.basket__num-heart span'),
+	  basketNumGoods = document.querySelectorAll('.basket__num-goods span'),
+	  modalChoiceBtn = document.querySelector('.modal-choice__btn');
 	  
-	  console.log(modalChoiceBtn);
 	let counterHeart = 0;
 	let counterGoods = 0;
 
+
 	catalogBasketHearts.forEach( item => {
-		item.addEventListener('click', ()=>{
+		item.addEventListener('click', (e)=>{
 			let plusHeart = ++counterHeart;
-			basketNumHeart.textContent = plusHeart;
+			basketNumHeart.forEach( item =>{
+				item.textContent = plusHeart;
+			});
 		});
 	});
 
-	modalChoiceBtn.addEventListener('click', ()=>{
+	modalChoiceBtn.addEventListener('click', (e)=>{
 		let plusgoods = ++counterGoods;
-		basketNumGoods.textContent = plusgoods;
+		basketNumGoods.forEach( item =>{
+			item.textContent = plusgoods;
+		});
 	});

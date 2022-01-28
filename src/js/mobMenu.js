@@ -10,6 +10,7 @@ const burgerMob = document.querySelector('.burger__mob'),
       catalogBasketAdd = document.querySelectorAll('.catalog__basket-add'),
       modalChoice = document.querySelector('.modal-choice'),
       modalChoiceClose = document.querySelector('.modal-choice__close');
+      
 
 function navMobMenuOpen(){
     navMobMenu.classList.add('nav-mob__menu--active');
@@ -93,7 +94,8 @@ catalogBasketAdd.forEach( (item, index)=>{
        
     });
 });
-function modalChoiceCl(){
+function modalChoiceCl(e){
+    e.preventDefault();
 /*     console.log('sss'); */
     modalChoice.classList.remove('modal-choice--active');
     enableScroll();
@@ -140,3 +142,4 @@ navMobMenu.addEventListener('touchmove',handelTouchMove);
 
 
 modalChoiceClose.addEventListener('click', modalChoiceCl);
+modalChoiceBtn.addEventListener('click', modalChoiceCl);

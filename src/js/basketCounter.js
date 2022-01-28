@@ -9,6 +9,7 @@ const catalogBasketHearts = document.querySelectorAll('.catalog__basket-heart'),
 
 	catalogBasketHearts.forEach( item => {
 		item.addEventListener('click', (e)=>{
+			e.preventDefault();
 			let plusHeart = ++counterHeart;
 			basketNumHeart.forEach( item =>{
 				item.textContent = plusHeart;
@@ -17,6 +18,7 @@ const catalogBasketHearts = document.querySelectorAll('.catalog__basket-heart'),
 	});
 
 	modalChoiceBtn.addEventListener('click', (e)=>{
+		e.preventDefault();
 		let plusgoods = ++counterGoods;
 		basketNumGoods.forEach( item =>{
 			item.textContent = plusgoods;

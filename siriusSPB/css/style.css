@@ -489,6 +489,7 @@ template {
 .noUi-touch-area {
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }
 
 .noUi-state-tap .noUi-connect,
@@ -1611,6 +1612,10 @@ input[type=number] {
   text-align: center;
 }
 
+.catalog__img-box img {
+  margin-top: 14px;
+}
+
 .catalog__content {
   margin: 0 20px 20px 20px;
 }
@@ -1780,11 +1785,20 @@ input[type=number] {
 
 .pagination__list-item:hover:not(:last-child) {
   background-color: #E93C3C;
+  border-radius: 2px;
   color: #ffff;
 }
 
 .pagination__list-item:last-child {
   color: #E93C3C;
+}
+
+.pagination .footer__top-item .address__email {
+  margin-bottom: 20px;
+}
+
+.pagination .footer__top-item .social {
+  margin-bottom: 29px;
 }
 
 /* pagination end*/
@@ -1945,9 +1959,9 @@ input[type=number] {
 }
 
 .footer__bottom {
-  height: 70px;
+  min-height: 70px;
   background-color: #f9f9fa;
-  padding-bottom: 38px;
+  padding-bottom: 21px;
 }
 
 .footer__bottom-title {

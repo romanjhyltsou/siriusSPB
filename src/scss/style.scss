@@ -631,6 +631,9 @@ input[type=number] {
   &__img-box{
     text-align: center;
   }
+  &__img-box img{
+    margin-top: 14px;
+  }
   &__content{
     margin: 0 20px 20px 20px;
   }
@@ -746,10 +749,17 @@ input[type=number] {
   }
   &__list-item:hover:not(:last-child) {
     background-color:$red;
+    border-radius: 2px;
     color: #ffff;
   }
   &__list-item:last-child{
     color: $red;
+  }
+  .footer__top-item .address__email {
+    margin-bottom: 20px;
+  }
+  .footer__top-item .social {
+    margin-bottom: 29px;
   }
 }
 /* pagination end*/
@@ -879,9 +889,9 @@ input[type=number] {
 .footer {
 
   &__bottom {
-    height: 70px;
+    min-height: 70px;
     background-color:rgba(249, 249, 250, 1);
-    padding-bottom: 38px;
+    padding-bottom: 21px;
   }
 
   &__bottom-title {

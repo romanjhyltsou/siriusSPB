@@ -67,8 +67,8 @@ function handelTouchMove(e){
         if(xDiff > 0){
             /* console.log('right'); */
         }else{
-            catalogAsidePrice.classList.remove('catalog-aside__price--active');
-            navMobMenu.classList.remove('nav-mob__menu--active');
+            filterByPriceFilterClose(e);
+            navMobMenuClose();
             /* console.log('left'); */
         }
     }else{

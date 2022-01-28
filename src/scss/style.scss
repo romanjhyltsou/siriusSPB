@@ -41,7 +41,7 @@
   .container{
     max-width: 1280px;   
     margin: 0 auto;
-    padding: 0px 10px; 
+    padding: 0px 20px; 
   }
 $greyL: #A0A4A8;
 $grey: #828282;
@@ -498,7 +498,7 @@ input[type=number] {
 .catalog-aside {
 
 		&__price {
-      width: 257px;
+      max-width: 257px;
       max-height: 2512px;
       background: #F9F9FA;
       border: 1px solid #E8E8E8;
@@ -616,11 +616,12 @@ input[type=number] {
   &__card-wrapper{
     display: flex;
     flex-wrap: wrap;
+    max-width:1210px;
+    width: 100%;
   }
   &__card{
     display: block;
-    max-width: 250px;
-    width: 100%;
+    width: 24.8%;
     border: 1px solid #e8e8e8;
   }
   &__card:hover{
@@ -692,12 +693,12 @@ input[type=number] {
     color: inherit;
     background-color: transparent;
     cursor: pointer;
-    padding: 15px 450.5px;
+    width: 99.9%;
+    height: 46px;
     border: 1px solid rgba(232, 232, 232, 1);
     background: #F9F9FA;
   }
 }
-
 /* .catalog end*/
 
 /* pagination */

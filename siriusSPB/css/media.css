@@ -336,6 +336,10 @@
     display: none;
   }
 
+  .catalog__basket-add {
+    max-width: 218px;
+  }
+
   .catalog__card {
     width: 49.6%;
   }
@@ -576,6 +580,17 @@
   .footer__bottom-title {
     padding-top: 20px;
   }
+
+  .catalog__content-text {
+    display: block;
+    max-width: 354px;
+  }
+
+  .catalog__basket-add {
+    max-width: 333px;
+    width: 100%;
+    height: 40px;
+  }
 }
 
 @media (max-width: 340px) {
@@ -594,5 +609,11 @@
 
   .subscription__form-input {
     width: 280px;
+  }
+
+  .catalog__content-text {
+    display: block;
+    max-width: 261px;
+    font-size: 13px;
   }
 }

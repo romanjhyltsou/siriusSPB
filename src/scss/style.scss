@@ -642,8 +642,10 @@ input[type=number] {
     margin: 24px 0 8px;
   }
   &__content-text{
+    display: block;
     @include fontRobReg($black, 130%, 14px);
     margin-bottom: 14px;
+    max-width: 268px;
   }
   &__content-wholesale{
     @include fontRobReg($blue, 130%, 18px);

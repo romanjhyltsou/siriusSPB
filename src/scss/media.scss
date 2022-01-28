@@ -129,6 +129,9 @@ $blue: #1A8BFF;
     .catalog__card {
         width: 33.1%;
     }
+    .pagination {
+        margin-bottom: 100px;
+    }
 }
 @media(max-width:1027px){
     .catalog__card:nth-child(19),
@@ -419,9 +422,6 @@ $blue: #1A8BFF;
 @media(max-width:475px){
     .catalog__card {
         width: 100%;
-    }
-    .catalog__card{
-
     }
     .catalog__content-art {
         margin: 14px 0 10px;

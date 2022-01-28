@@ -167,6 +167,10 @@
   .catalog__card {
     width: 33.1%;
   }
+
+  .pagination {
+    margin-bottom: 100px;
+  }
 }
 
 @media (max-width: 1027px) {
